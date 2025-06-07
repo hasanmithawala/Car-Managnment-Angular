@@ -1,0 +1,27 @@
+/* styles.css or styles.scss */
+.error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+.outerbody{
+    margin: 20px auto;
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Additional table styles as needed */
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}

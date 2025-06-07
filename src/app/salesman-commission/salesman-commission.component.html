@@ -1,0 +1,23 @@
+<div class="outerbody">
+<h2>Salesman Commission Report</h2>
+<div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+  
+  <table *ngIf="salesmanCommissions.length > 0" class="table">
+    <thead>
+      <tr>
+        <th>Salesman</th>
+        <th>Total Sales Amount</th>
+        <th>Total Commission</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let commission of salesmanCommissions">
+        <td>{{ commission.salesman }}</td>
+        <td>{{ commission.totalSalesAmount | currency }}</td>
+        <td>{{ commission.totalCommission | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> 

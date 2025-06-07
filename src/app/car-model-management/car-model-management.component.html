@@ -1,0 +1,140 @@
+<div class="outerbody">
+  <h2>Car Management Model</h2>
+  <form [formGroup]="carModelForm" (ngSubmit)="submitForm()" class="form-container">
+    <div class="form-row">
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Brand</mat-label>
+          <mat-select formControlName="Brand">
+            <mat-option *ngFor="let brand of brands" [value]="brand">{{ brand }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Class</mat-label>
+          <mat-select formControlName="Class">
+            <mat-option *ngFor="let class of classes" [value]="class">{{ class }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Model Name</mat-label>
+          <input matInput formControlName="ModelName" required />
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Model Code</mat-label>
+          <input matInput formControlName="ModelCode" required />
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="Description" matTextareaAutosize matAutosizeMinRows="3"
+            required></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Features</mat-label>
+          <textarea matInput formControlName="Features" matTextareaAutosize matAutosizeMinRows="3" required></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Price</mat-label>
+          <input matInput type="number" formControlName="Price" required />
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Date of Manufacturing</mat-label>
+          <input matInput type="date" formControlName="DateOfManufacturing" required />
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-checkbox formControlName="Active">Active</mat-checkbox>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label>Sort Order</mat-label>
+          <input matInput type="number" formControlName="SortOrder" required />
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <label>Images (Max size 5MB each)</label>
+        <input type="file" (change)="onFileChange($event)" multiple required accept="image/*" />
+      </div>
+      <div class="form-field">
+        <label>Selected Images</label>
+        <div *ngFor="let file of selectedFiles; let i = index" class="selected-file">
+          <img [src]="file.url" alt="Selected Image" class="preview-image">
+          <button mat-icon-button color="warn" (click)="removeFile(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="form-field button-container">
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<style>
+  .form-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .outerbody{
+    margin: 20px auto;
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .form-row {
+    display: contents;
+  }
+
+  .form-field {
+    margin-bottom: 16px;
+  }
+
+  .button-container {
+    grid-column: span 3;
+  }
+
+  .selected-file {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .preview-image {
+    width: 70px;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Automatically adjust height to maintain aspect ratio */
+    margin-right: 12px;
+
+  }
+</style>

@@ -1,0 +1,35 @@
+<div>
+  <h2>Model Listing</h2>
+  <div class="search">
+    <label>Search by Model Name:</label>
+    <input type="text" [(ngModel)]="searchModelName" />
+    <label>Search by Model Code:</label>
+    <input type="text" [(ngModel)]="searchModelCode" />
+    <button (click)="search()">Search</button>
+    <button (click)="resetSearch()">Reset</button> 
+  </div>
+  <button class="add-new-model-button" (click)="addNewModel()">Add New Car</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Model Image</th>
+        <th (click)="setSort('modelName')">Model Name <span [ngClass]="getSortClass('modelName')"></span></th>
+        <th (click)="setSort('modelCode')">Model Code <span [ngClass]="getSortClass('modelCode')"></span></th>
+        <th (click)="setSort('dateOfManufacturing')">Manufacturing Date <span [ngClass]="getSortClass('dateOfManufacturing')"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let model of models">
+        <td><img [src]="model.ImageURL" alt="Model Image" style="width: auto; height: 50px;"></td>
+        <td>{{ model.modelName }}</td>
+        <td>{{ model.modelCode }}</td>
+        <td>{{ model.dateOfManufacturing | date:'mediumDate' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <button *ngFor="let page of getPages()" (click)="onPageChange(page)">
+      {{ page }}
+    </button>
+  </div>
+</div>

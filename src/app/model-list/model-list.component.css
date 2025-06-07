@@ -1,0 +1,122 @@
+
+    /* Paste the CSS styles here */
+    .error {
+      color: red;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table th, .table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .table th {
+      background-color: #f2f2f2;
+    }
+
+    
+    .arrow-up::after {
+      content: '▲';
+      margin-left: 5px;
+    }
+    
+    .arrow-down::after {
+      content: '▼';
+      margin-left: 5px;
+    }
+    
+    th {
+      cursor: pointer;
+    }
+    div {
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .search label {
+      margin-right: 10px;
+    }
+
+    .search input[type="text"] {
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      flex: 1;
+      margin-right: 10px;
+    }
+    .add-new-model-button {
+      background-color: #4b3fd4; /* Green background */
+      border: none; /* Remove borders */
+      color: white; /* White text */
+      padding: 8px 16px; /* Some padding */
+      text-align: center; /* Centered text */
+      text-decoration: none; /* Remove underline */
+      display: inline-block; /* Make the button inline block */
+      font-size: 16px; /* Increase font size */
+      margin: 10px 2px; /* Add some margin */
+      cursor: pointer; /* Add a pointer cursor on hover */
+      border-radius: 4px; /* Add rounded corners */
+      transition: background-color 0.3s ease; /* Add transition for hover effect */
+    }
+    
+    .add-new-model-button:hover {
+      background-color: #512d94; /* Darker green on hover */
+    }
+    .search button {
+      padding: 8px 16px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #12e543;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+    }
+
+    .search button:hover {
+      background-color: #0056b3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    thead {
+      background-color: #f2f2f2;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      cursor: pointer;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
